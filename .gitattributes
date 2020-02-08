@@ -1,0 +1,2 @@
+# wildcarded, absolute path with n-dir levels
+**/public/* linguist-vendored
