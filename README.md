@@ -50,3 +50,9 @@ ssr2clashr help
 - [tindy2013/subconverter/](https://github.com/tindy2013/subconverter/)
 
 - [ne1llee/v2ray2clash](https://github.com/ne1llee/v2ray2clash)
+
+- [spf13/cobra](https://github.com/spf13/cobra)
+
+- [spf13/viper](https://github.com/spf13/viper)
+
+- [kataras/iris](https://github.com/kataras/iris)

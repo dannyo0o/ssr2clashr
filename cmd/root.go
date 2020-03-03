@@ -16,6 +16,7 @@ var (
 )
 
 func init() {
+	cobra.MousetrapHelpText = ""
 	cobra.OnInitialize(config.Execute)
 }
 

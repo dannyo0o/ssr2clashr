@@ -37,22 +37,23 @@ type ClashRSSR struct {
 
 // Clash struct
 type Clash struct {
-	Port      int `yaml:"port"`
-	SocksPort int `yaml:"socks-port"`
-	// RedirPort          int                      `yaml:"redir-port"`
-	// Authentication     []string                 `yaml:"authentication"`
-	AllowLan           bool   `yaml:"allow-lan"`
-	Mode               string `yaml:"mode"`
-	LogLevel           string `yaml:"log-level"`
-	ExternalController string `yaml:"external-controller"`
-	// ExternalUI         string                   `yaml:"external-ui"`
-	// Secret             string                   `yaml:"secret"`
-	// Experimental       map[string]interface{} 	`yaml:"experimental"`
-	CFWByPass         []string                 `yaml:"cfw-bypass"`
-	CFWLatencyTimeout int                      `yaml:"cfw-latency-timeout"`
-	Proxy             []map[string]interface{} `yaml:"Proxy"`
-	ProxyGroup        []map[string]interface{} `yaml:"Proxy Group"`
-	Rule              []string                 `yaml:"Rule"`
+	Port               int                      `yaml:"port"`
+	SocksPort          int                      `yaml:"socks-port"`
+	RedirPort          int                      `yaml:"redir-port"`
+	Authentication     []string                 `yaml:"authentication"`
+	AllowLan           bool                     `yaml:"allow-lan"`
+	Mode               string                   `yaml:"mode"`
+	LogLevel           string                   `yaml:"log-level"`
+	ExternalController string                   `yaml:"external-controller"`
+	ExternalUI         string                   `yaml:"external-ui"`
+	Secret             string                   `yaml:"secret"`
+	DNS                map[string]interface{}   `yaml:"dns"`
+	Experimental       map[string]interface{}   `yaml:"experimental"`
+	CFWByPass          []string                 `yaml:"cfw-bypass"`
+	CFWLatencyTimeout  int                      `yaml:"cfw-latency-timeout"`
+	Proxy              []map[string]interface{} `yaml:"Proxy"`
+	ProxyGroup         []map[string]interface{} `yaml:"Proxy Group"`
+	Rule               []string                 `yaml:"Rule"`
 }
 
 // ProxyGroup struct

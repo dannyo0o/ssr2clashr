@@ -32,15 +32,21 @@ func defaultInit() {
 
 // Execute func()
 func Execute() {
+	viper.SetConfigName("config")
 	viper.SetConfigType("yaml")
-	viper.SetConfigFile("config.yaml")
+	viper.AddConfigPath(".")
+	viper.AddConfigPath("$HOME/.ssr2clashr")
 
 	defaultInit()
 
 	if e := viper.ReadInConfig(); e != nil {
-		fmt.Println(e, "\n未找到配置文件，将使用默认配置")
-
+		if _, ok := e.(viper.ConfigFileNotFoundError); ok {
+			fmt.Println("未找到配置文件，将使用默认配置")
+		} else {
+			fmt.Println(e)
+		}
 	} else {
-		fmt.Println("使用配置文件:", viper.ConfigFileUsed())
+		fmt.Println("已载入配置文件:", viper.ConfigFileUsed())
+		viper.WatchConfig()
 	}
 }
