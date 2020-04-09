@@ -291,7 +291,6 @@ DOMAIN-KEYWORD,inmobi
 DOMAIN-KEYWORD,lianmeng
 DOMAIN-KEYWORD,mobaders
 DOMAIN-KEYWORD,omgmta
-DOMAIN-KEYWORD,omniture
 DOMAIN-KEYWORD,openx
 DOMAIN-KEYWORD,partnerad
 DOMAIN-KEYWORD,securepubads
@@ -870,7 +869,6 @@ DOMAIN-SUFFIX,abcj.dooccn.com
 DOMAIN-SUFFIX,ab-gb.mgid.com
 DOMAIN-SUFFIX,abtest.mistat.xiaomi.com
 DOMAIN-SUFFIX,ac.atpanel.com
-DOMAIN-SUFFIX,ac.mmstat.com
 DOMAIN-SUFFIX,ac2.msn.com
 DOMAIN-SUFFIX,ac3.msn.com
 DOMAIN-SUFFIX,acasys88.cn
@@ -1530,7 +1528,6 @@ DOMAIN-SUFFIX,api.iimedia.cn
 DOMAIN-SUFFIX,api.ijunhai.com
 DOMAIN-SUFFIX,api.itaoxiaoshuo.com
 DOMAIN-SUFFIX,api.joybj.com
-DOMAIN-SUFFIX,api.jr.mi.com
 DOMAIN-SUFFIX,api.ketedata.com
 DOMAIN-SUFFIX,api.koudaikj.com
 DOMAIN-SUFFIX,api.leadbolt.net
@@ -1621,7 +1618,6 @@ DOMAIN-SUFFIX,applifier.com
 DOMAIN-SUFFIX,applog.uc.cn
 DOMAIN-SUFFIX,applogapi.autohome.com.cn
 DOMAIN-SUFFIX,applogios.uc.cn
-DOMAIN-SUFFIX,app-measurement.com
 DOMAIN-SUFFIX,app-monitor.ele.me
 DOMAIN-SUFFIX,appnext.com
 DOMAIN-SUFFIX,appodealx.com
@@ -1723,7 +1719,6 @@ DOMAIN-SUFFIX,b.ads1.msn.com
 DOMAIN-SUFFIX,b.aowugame.com
 DOMAIN-SUFFIX,b.babylon.com
 DOMAIN-SUFFIX,b.baiy.net
-DOMAIN-SUFFIX,b.bdstatic.com
 DOMAIN-SUFFIX,b.bst.126.net
 DOMAIN-SUFFIX,b.clkservice.youdao.com
 DOMAIN-SUFFIX,b.code.tanwanyx.com
@@ -3741,7 +3736,6 @@ DOMAIN-SUFFIX,go.gogolm.xyz
 DOMAIN-SUFFIX,go.gotourl.xyz
 DOMAIN-SUFFIX,go.gotourls.bid
 DOMAIN-SUFFIX,go.hangzhou.com.cn
-DOMAIN-SUFFIX,go.mmstat.com
 DOMAIN-SUFFIX,go.onclasrv.com
 DOMAIN-SUFFIX,go.util.zlibs.com
 DOMAIN-SUFFIX,godloveme.cn
@@ -3803,7 +3797,6 @@ DOMAIN-SUFFIX,gw5.push.mcp.weibo.cn
 DOMAIN-SUFFIX,gw6.push.mcp.weibo.cn
 DOMAIN-SUFFIX,gw630.com
 DOMAIN-SUFFIX,gx38.cn
-DOMAIN-SUFFIX,gxb.mmstat.com
 DOMAIN-SUFFIX,gxdhgb.com
 DOMAIN-SUFFIX,gxe.husky.sogou.com
 DOMAIN-SUFFIX,gyca9f.dahuangcheng.cn
@@ -3991,7 +3984,6 @@ DOMAIN-SUFFIX,hystq.com
 DOMAIN-SUFFIX,hytgj.com
 DOMAIN-SUFFIX,hyz86.com
 DOMAIN-SUFFIX,hz.miercn.com
-DOMAIN-SUFFIX,hz.mmstat.com
 DOMAIN-SUFFIX,hz.shouyoutv.com
 DOMAIN-SUFFIX,hzaibi.com
 DOMAIN-SUFFIX,hzdmacore.kejet.net
@@ -4027,7 +4019,6 @@ DOMAIN-SUFFIX,i92xue.com
 DOMAIN-SUFFIX,ia.ctags.cn
 DOMAIN-SUFFIX,iad.g.163.com
 DOMAIN-SUFFIX,iadc.qwapi.com
-DOMAIN-SUFFIX,iadmat.nosdn.127.net
 DOMAIN-SUFFIX,iadmatvideo.nosdn.127.net
 DOMAIN-SUFFIX,iadmusicmat.music.126.net
 DOMAIN-SUFFIX,iads.xinmin.cn
@@ -4815,6 +4806,7 @@ DOMAIN-SUFFIX,livehapp.com
 DOMAIN-SUFFIX,livep.l.ott.video.qq.com
 DOMAIN-SUFFIX,lives.l.cp81.ott.cibntv.net
 DOMAIN-SUFFIX,lives.l.ott.video.qq.com
+DOMAIN-SUFFIX,lives.l.qq.com
 DOMAIN-SUFFIX,liveupdate.mac.sandai.net
 DOMAIN-SUFFIX,lixiangmo.com
 DOMAIN-SUFFIX,ljrtb.cn
@@ -5456,7 +5448,6 @@ DOMAIN-SUFFIX,mm.moquanad.com
 DOMAIN-SUFFIX,mmcc.yxlady.com
 DOMAIN-SUFFIX,mmg.aty.cp45.ott.cibntv.net
 DOMAIN-SUFFIX,mmg.aty.snmsohu.aisee.tv
-DOMAIN-SUFFIX,mmstat.com
 DOMAIN-SUFFIX,mng-ads.com
 DOMAIN-SUFFIX,mnkan.com
 DOMAIN-SUFFIX,mnwan.com
@@ -5738,7 +5729,6 @@ DOMAIN-SUFFIX,oascentral.sina.com.hk
 DOMAIN-SUFFIX,oask.xulizui6.com
 DOMAIN-SUFFIX,obeyter.com
 DOMAIN-SUFFIX,ocbv0.baiyangzs.com
-DOMAIN-SUFFIX,ocsp.godaddy.com
 DOMAIN-SUFFIX,odc.starwave.com
 DOMAIN-SUFFIX,odin.goo.mx
 DOMAIN-SUFFIX,officeme.cn
@@ -5850,7 +5840,6 @@ DOMAIN-SUFFIX,p215223.clksite.com
 DOMAIN-SUFFIX,p215223.inclk.com
 DOMAIN-SUFFIX,p215223.mycdn2.co
 DOMAIN-SUFFIX,p2pmid.baofeng.com
-DOMAIN-SUFFIX,p3p.mmstat.com
 DOMAIN-SUFFIX,p3p.sogou.com
 DOMAIN-SUFFIX,p3p.yahoo.com
 DOMAIN-SUFFIX,p3tt.com
@@ -6358,7 +6347,6 @@ DOMAIN-SUFFIX,res.cocounion.com
 DOMAIN-SUFFIX,res.dxpmedia.com
 DOMAIN-SUFFIX,res.icast.cn
 DOMAIN-SUFFIX,res.ipingke.com
-DOMAIN-SUFFIX,res.mmstat.com
 DOMAIN-SUFFIX,res.qhupdate.com
 DOMAIN-SUFFIX,res3.feedsportal.com
 DOMAIN-SUFFIX,rescn.u3.ucweb.com
@@ -7670,7 +7658,6 @@ DOMAIN-SUFFIX,weyyae.com
 DOMAIN-SUFFIX,wgie.0z5jn.cn
 DOMAIN-SUFFIX,wgnlz.com
 DOMAIN-SUFFIX,wgnmp.com
-DOMAIN-SUFFIX,wgo.mmstat.com
 DOMAIN-SUFFIX,whafwl.com
 DOMAIN-SUFFIX,whalecloud.com
 DOMAIN-SUFFIX,whcrdz.com
@@ -8110,7 +8097,6 @@ DOMAIN-SUFFIX,ysej.code.weddingeeos.com
 DOMAIN-SUFFIX,ysjwj.com
 DOMAIN-SUFFIX,ysm.hauchi.com.tw
 DOMAIN-SUFFIX,ysm.yahoo.com
-DOMAIN-SUFFIX,yt.mmstat.com
 DOMAIN-SUFFIX,yt-adp.nosdn.127.net
 DOMAIN-SUFFIX,ytapi1.nagezan.net
 DOMAIN-SUFFIX,ytdksb.com

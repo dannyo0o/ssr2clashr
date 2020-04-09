@@ -37,23 +37,26 @@ type ClashRSSR struct {
 
 // Clash struct
 type Clash struct {
-	Port               int                      `yaml:"port"`
-	SocksPort          int                      `yaml:"socks-port"`
-	RedirPort          int                      `yaml:"redir-port"`
-	Authentication     []string                 `yaml:"authentication"`
-	AllowLan           bool                     `yaml:"allow-lan"`
-	Mode               string                   `yaml:"mode"`
-	LogLevel           string                   `yaml:"log-level"`
-	ExternalController string                   `yaml:"external-controller"`
-	ExternalUI         string                   `yaml:"external-ui"`
-	Secret             string                   `yaml:"secret"`
-	DNS                map[string]interface{}   `yaml:"dns"`
-	Experimental       map[string]interface{}   `yaml:"experimental"`
-	CFWByPass          []string                 `yaml:"cfw-bypass"`
-	CFWLatencyTimeout  int                      `yaml:"cfw-latency-timeout"`
-	Proxy              []map[string]interface{} `yaml:"Proxy"`
-	ProxyGroup         []map[string]interface{} `yaml:"Proxy Group"`
-	Rule               []string                 `yaml:"Rule"`
+	Port               int                               `yaml:"port"`
+	SocksPort          int                               `yaml:"socks-port"`
+	RedirPort          int                               `yaml:"redir-port"`
+	AllowLan           bool                              `yaml:"allow-lan"`
+	BindAddress        string                            `yaml:"bind-address"`
+	Mode               string                            `yaml:"mode"`
+	LogLevel           string                            `yaml:"log-level"`
+	ExternalController string                            `yaml:"external-controller"`
+	ExternalUI         string                            `yaml:"external-ui"`
+	Secret             string                            `yaml:"secret"`
+	Experimental       map[string]interface{}            `yaml:"experimental"`
+	Authentication     []string                          `yaml:"authentication"`
+	HOSTS              map[string]string                 `yaml:"hosts"`
+	DNS                map[string]interface{}            `yaml:"dns"`
+	CFWByPass          []string                          `yaml:"cfw-bypass"`
+	CFWLatencyTimeout  int                               `yaml:"cfw-latency-timeout"`
+	Proxies            []map[string]interface{}          `yaml:"proxies"`
+	ProxyProviders     map[string]map[string]interface{} `yaml:"proxy-providers"`
+	ProxyGroups        []map[string]interface{}          `yaml:"proxy-groups"`
+	Rules              []string                          `yaml:"rules"`
 }
 
 // ProxyGroup struct
@@ -70,6 +73,7 @@ type ProxyGroupSelect struct {
 	Name    string   `yaml:"name"`
 	Type    string   `yaml:"type"`
 	Proxies []string `yaml:"proxies"`
+	Use     []string `yaml:"use"`
 }
 
 const (
@@ -243,7 +247,7 @@ func loadTemplate(protos []ClashRSSR) Clash {
 	}
 
 	//clash.Proxy
-	clash.Proxy = nil
+	clash.Proxies = nil
 	var proxys []map[string]interface{}
 	var proxies []string
 	for _, proto := range protos {
@@ -251,7 +255,7 @@ func loadTemplate(protos []ClashRSSR) Clash {
 		j, _ := yaml.Marshal(proto)
 		yaml.Unmarshal(j, &proxy)
 		proxys = append(proxys, proxy)
-		clash.Proxy = append(clash.Proxy, proxy)
+		clash.Proxies = append(clash.Proxies, proxy)
 		proxies = append(proxies, proto.Name)
 	}
 
@@ -269,7 +273,7 @@ func loadTemplate(protos []ClashRSSR) Clash {
 		}
 	}
 
-	clash.Proxy = proxys
+	clash.Proxies = proxys
 
 	// clash.ProxyGroup
 	groupSet := viper.GetStringMap("groupset")
@@ -277,7 +281,7 @@ func loadTemplate(protos []ClashRSSR) Clash {
 	groupset := groupSet["groupset"]
 
 	if groupsetValue := reflect.ValueOf(groupset); groupEnabled != nil && reflect.TypeOf(groupEnabled).Kind() == reflect.Bool && reflect.ValueOf(groupEnabled).Bool() && groupset != nil && reflect.TypeOf(groupset).Kind() == reflect.Slice && !groupsetValue.IsNil() {
-		clash.ProxyGroup = nil
+		clash.ProxyGroups = nil
 		for i := 0; i < groupsetValue.Len(); i++ {
 
 			var gname, gtype, gurl string
@@ -301,11 +305,12 @@ func loadTemplate(protos []ClashRSSR) Clash {
 						gname,
 						gtype,
 						gproxies,
+						[]string{},
 					}
 					tmpf := make(map[string]interface{})
 					tmps, _ := yaml.Marshal(tmpGroup)
 					yaml.Unmarshal(tmps, &tmpf)
-					clash.ProxyGroup = append(clash.ProxyGroup, tmpf)
+					clash.ProxyGroups = append(clash.ProxyGroups, tmpf)
 
 				default:
 					for _, v := range groupsetSplit[2:] {
@@ -329,25 +334,26 @@ func loadTemplate(protos []ClashRSSR) Clash {
 					tmpf := make(map[string]interface{})
 					tmps, _ := yaml.Marshal(tmpGroup)
 					yaml.Unmarshal(tmps, &tmpf)
-					clash.ProxyGroup = append(clash.ProxyGroup, tmpf)
+					clash.ProxyGroups = append(clash.ProxyGroups, tmpf)
 				}
 			}
 
 		}
 	} else {
-		if len(clash.ProxyGroup) < 1 {
+		if len(clash.ProxyGroups) < 1 {
 			tmpProxyGroup := ProxyGroupSelect{
 				"Proxy",
 				"select",
 				proxies,
+				[]string{},
 			}
 			tmpf := make(map[string]interface{})
 			tmps, _ := yaml.Marshal(tmpProxyGroup)
 			yaml.Unmarshal(tmps, &tmpf)
-			clash.ProxyGroup = append(clash.ProxyGroup, tmpf)
+			clash.ProxyGroups = append(clash.ProxyGroups, tmpf)
 
 		} else {
-			for _, group := range clash.ProxyGroup {
+			for _, group := range clash.ProxyGroups {
 				groupProxies := group["proxies"].([]interface{})
 				for i, proxie := range groupProxies {
 					if "1" == proxie {
@@ -371,8 +377,8 @@ func loadTemplate(protos []ClashRSSR) Clash {
 	ruledEnabled := ruleSet["enabled"]
 	ruleset := ruleSet["ruleset"]
 	if rulesetValue := reflect.ValueOf(ruleset); ruledEnabled != nil && reflect.TypeOf(ruledEnabled).Kind() == reflect.Bool && reflect.ValueOf(ruledEnabled).Bool() && ruleset != nil && reflect.TypeOf(ruleset).Kind() == reflect.Slice && !rulesetValue.IsNil() {
-		clash.Rule = GroupRules
-	} else if len(clash.Rule) < 1 {
+		clash.Rules = GroupRules
+	} else if len(clash.Rules) < 1 {
 		fmt.Println("Rules Nothing")
 	}
 
