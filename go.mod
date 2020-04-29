@@ -14,9 +14,9 @@ require (
 	github.com/onsi/ginkgo v1.12.0 // indirect
 	github.com/onsi/gomega v1.9.0 // indirect
 	github.com/sergi/go-diff v1.1.0 // indirect
-	github.com/spf13/cobra v0.0.7
-	github.com/spf13/viper v1.6.2
-	github.com/valyala/fasthttp v1.9.0 // indirect
+	github.com/spf13/cobra v1.0.0
+	github.com/spf13/viper v1.6.3
+	github.com/valyala/fasthttp v1.12.0 // indirect
 	github.com/xeipuuv/gojsonschema v1.2.0 // indirect
 	github.com/yalp/jsonpath v0.0.0-20180802001716-5cc68e5049a0 // indirect
 	github.com/yudai/gojsondiff v1.0.0 // indirect

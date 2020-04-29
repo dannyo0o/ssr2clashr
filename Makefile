@@ -94,9 +94,11 @@ zip_releases=$(addsuffix .zip, $(WINDOWS_ARCH_LIST))
 
 %.gz : %
 	chmod +x $(BINDIR)/$(NAME)-$(basename $@)
+	upx --best -fv $(BINDIR)/$(NAME)-$(basename $@)
 	gzip -f -S .gz $(BINDIR)/$(NAME)-$(basename $@)
 
 %.zip : %
+	upx --best -fv $(BINDIR)/$(NAME)-$(basename $@).exe
 	zip -m -j $(BINDIR)/$(NAME)-$(basename $@).zip $(BINDIR)/$(NAME)-$(basename $@).exe
 
 
